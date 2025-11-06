@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MysticForge — Realista (centrado)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header><div class="container nav"><div class="logo">MysticForge</div><nav><a href="#creador">Creador</a> · <a href="#exportar">Exportar</a></nav></div></header>
+<main>
+<section id="creador">
+  <div class="container grid two">
+    <form id="panel" class="card" onsubmit="event.preventDefault();">
+      <h2>Configura tu amuleto</h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr">
+        <div><label for="piedra">Piedra</label><select id="piedra"></select></div>
+        <div><label for="metal">Metal</label><select id="metal"></select></div>
+        <div><label for="cadena">Cadena / cordón</label><select id="cadena"></select></div>
+        <div><label for="forma">Forma</label>
+          <select id="forma"><option value="redondo">Redondo</option><option value="lagrima">Lágrima</option><option value="ovalo">Óvalo</option><option value="hexagono">Hexágono</option><option value="rectangulo">Rectángulo</option></select>
+        </div>
+      </div>
+      <div class="grid" style="grid-template-columns:1fr 1fr">
+        <div><label for="grabado">Grabado</label><input type="text" id="grabado" maxlength="14" placeholder="FORTUNA"/></div>
+        <div><label for="fondo">Fondo</label>
+          <select id="fondo"><option value="studio">Estudio</option><option value="madera_oscura">Madera oscura</option><option value="madera_clara">Madera clara</option><option value="pizarra">Pizarra</option><option value="terciopelo">Terciopelo</option><option value="blanco">Blanco</option><option value="transparente">Transparente</option></select>
+        </div>
+      </div>
+      <div class="grid" style="grid-template-columns:1fr 1fr">
+        <div><label for="angulo">Ángulo</label><input type="range" id="angulo" min="-12" max="12" value="4"/></div>
+        <div><label for="luz">Luz</label><input type="range" id="luz" min="20" max="140" value="100"/></div>
+      </div>
+      <div><label><input type="checkbox" id="modoPro" checked/> Modo fotorrealista Pro</label></div>
+      <div style="margin-top:8px"><button type="button" class="btn" id="aplicar">Aplicar</button> <button type="button" class="btn ghost" id="aleatorio">Aleatorio</button></div>
+      <small>Vista centrada y sin recortes. El SVG usa padding interno.</small>
+    </form>
+    <div class="preview card" id="preview" role="img" aria-label="Vista previa del amuleto" aria-live="polite" aria-live="polite"></div>
+  </div>
+</section>
+<section id="exportar"><div class="container card"><h2>Exportar</h2>
+  <button type="button" class="btn" id="btn-png">PNG 1080</button> <button type="button" class="btn ghost" id="btn-svg">SVG</button>
+</div></section>
+</main>
+<script src="app_centered.js"></script>
+</body></html>
